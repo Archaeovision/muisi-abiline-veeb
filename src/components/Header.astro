@@ -1,0 +1,16 @@
+---
+import { Image } from "astro:assets";
+import Nav from "./Nav.astro";
+import logo from "../assets/logo.svg";
+---
+
+<header class="site-header">
+  <a class="skip-link" href="#content">Skip to content</a>
+  <div class="container-fluid header-inner">
+    <a class="brand" href="./">
+      <Image src={logo} alt="MuISi abiline" width={276} height={128} />
+    </a>
+    <div class="header-tagline">Märgistamislahendus Muuseumide Infosüsteemile</div>
+    <Nav />
+  </div>
+</header>

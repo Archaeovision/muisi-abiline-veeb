@@ -1,0 +1,295 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import printer from "../assets/printer.svg";
+import ex1 from "../assets/ex1__resize_790_2C438_ssl_1.png";
+import ex2 from "../assets/ex2__resize_790_2C346_ssl_1.png";
+import maMargend from "../assets/ma_margend__resize_1024_2C683_ssl_1.jpg";
+import maPrinterr from "../assets/ma_printerr__resize_1024_2C683_ssl_1.jpg";
+import maEx from "../assets/ma-ex__resize_396_2C389_ssl_1.png";
+---
+
+<BaseLayout>
+  <section class="section section--yellow hero">
+    <div class="container split split--hero">
+      <div class="stack">
+        <h1>Märgistamislahendus Muuseumide Infosüsteemile</h1>
+        <p class="lead-xl">
+          <strong>MuISi abiline</strong> võimaldab printida sildid otse MuISi keskkonnast
+          sildiprinterisse ilma muud tarkvara kasutamata.
+        </p>
+        <p class="lead-xl">
+          Prindi üks või tuhat silti, aega kulub selleks paari hiirekliki jagu.
+        </p>
+      </div>
+      <div class="hero-media">
+        <Image src={printer} alt="" width={215} height={378} priority />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <div>
+        <h2>Kuidas MuISi abiline töötab</h2>
+      </div>
+      <div class="stack">
+        <div class="spacer spacer--xl"></div>
+
+        <h3>Chrome laiendus</h3>
+        <p>
+          <strong>MuISi abiline</strong> on Chrome veebibrauseri laiendus, mis lisab
+          MuISi erinevatesse vaadetesse ribakoodi järgi otsimise võimaluse ning lisab
+          märgise printimisvõimaluse.
+        </p>
+
+        <h3>Kiiremad otsingud</h3>
+        <p>
+          <strong>MuISi abiline</strong> lisab MuISi keskkonda juurde otsingukasti,
+          mille kaudu on võimalik leida museaal kasutades MuISi identifitseerimisnumbrit
+          (ID). Skaneerides ribakoodi, täitub lahter automaatselt ning tulemus on
+          leitud.
+        </p>
+        <p>
+          <strong>MuISi abilisega</strong> jõuti ühe tunni jooksul kontrollida 20%
+          rohkem museaale kui traditsioonilisel viisil.
+        </p>
+
+        <figure>
+          <Image
+            src={ex1}
+            alt=""
+            width={790}
+            height={438}
+            sizes="(max-width: 790px) 100vw, 790px"
+          />
+          <figcaption>
+            Rohelise noolega on tähistatud otsinguaken ribakoodilugejale
+          </figcaption>
+        </figure>
+
+        <div class="spacer"></div>
+
+        <h3>Märgise printimine</h3>
+        <p>
+          Sülemivaatesse lisab <strong>MuISi abiline</strong> nupud printimiseks ning
+          sülemi alla laadimiseks tabel-kujul (CSV) koos museaali ID-ga.
+        </p>
+
+        <figure>
+          <Image
+            src={ex2}
+            alt=""
+            width={790}
+            height={346}
+            sizes="(max-width: 790px) 100vw, 790px"
+          />
+          <figcaption>Rohelise noolega on näidatud printimisnupud</figcaption>
+        </figure>
+
+        <div class="spacer"></div>
+
+        <div class="grid-two">
+          <div>
+            <h4 class="heading-border">Märgised</h4>
+            <p>
+              <strong>MuISi abiline</strong> toetab hetkel kahes mõõdus märgiseid:
+            </p>
+            <ul>
+              <li>
+                40×50mm riputatav perforeeritud silt (saadaval nii Tyvek kui ka
+                sünteetilisel paberil)
+              </li>
+              <li>50×25mm kleebis</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="heading-border">Printer</h4>
+            <p>
+              Lahendus on kohandatud <strong>Brady BBP12</strong> printerile, mille
+              kasutamiseks piisab veebibrauserist.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-two media-grid">
+          <figure>
+            <Image
+              src={maMargend}
+              alt=""
+              width={1024}
+              height={683}
+              loading="lazy"
+              sizes="auto, (max-width: 1000px) 100vw, 1000px"
+            />
+          </figure>
+          <figure>
+            <Image
+              src={maPrinterr}
+              alt=""
+              width={1024}
+              height={683}
+              loading="lazy"
+              sizes="auto, (max-width: 1000px) 100vw, 1000px"
+            />
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--yellow">
+    <div class="container split">
+      <div>
+        <h2>Miks kasutada museaalide märgistamisel ribakoodi?</h2>
+      </div>
+      <div class="boxed-grid">
+        <div class="boxed-row">
+          <div class="boxed-cell">
+            <p class="big-number">1</p>
+            <h3>Kiirendab inventuuri</h3>
+          </div>
+          <div class="boxed-cell">
+            <p class="big-number">2</p>
+            <h3>Kiirendab päringuid kuni 5 korda</h3>
+          </div>
+        </div>
+        <div class="boxed-row">
+          <div class="boxed-cell">
+            <p class="big-number">3</p>
+            <h3>Kiirendab digimist</h3>
+            <p>
+              Ribakoode on võimalik kasutada ka digimisel ja failide nimetamisel
+              MuISile sobiliku formaati.
+            </p>
+          </div>
+          <div class="boxed-cell boxed-cell--media">
+            <Image
+              src={maEx}
+              alt=""
+              width={396}
+              height={389}
+              loading="lazy"
+              sizes="auto, (max-width: 396px) 100vw, 396px"
+            />
+          </div>
+        </div>
+        <div class="boxed-row boxed-row--single">
+          <div class="boxed-cell">
+            <p class="big-number">4</p>
+            <h3>Vajalik ühishoidlas</h3>
+            <p>
+              Seoses ühishoidlate kasutamisega tekib masinloetava ribakoodi
+              nõue, seega on õige aeg märgiste loomisega pihta hakata.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--yellow">
+    <div class="container">
+      <h2 id="Hinnakiri">Hinnakiri</h2>
+      <div class="table-wrap">
+        <table class="price-table">
+          <tbody>
+            <tr>
+              <td><strong>Kasutajaid</strong></td>
+              <td class="center">1-2</td>
+              <td class="center">3-5</td>
+              <td class="center">6-10</td>
+              <td class="center">11+</td>
+            </tr>
+            <tr>
+              <td><strong>Aastamaks (ilma KM)</strong></td>
+              <td class="center">552 EUR</td>
+              <td class="center">839 EUR</td>
+              <td class="center">1242 EUR</td>
+              <td class="center">kokkuleppel</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="split split--stack">
+        <div>
+          <h2>Proovi juba täna</h2>
+        </div>
+        <div class="stack">
+          <div class="spacer"></div>
+          <h3>Lae alla Chrome&#8217;i veebipoest</h3>
+          <p>
+            Saad <strong>MuISi abilise</strong> alla laadida
+            <a
+              href="https://chrome.google.com/webstore/detail/muisi-abiline/kladebffgahpoofehamjiobhbofeeoem"
+              >Chrome&#8217;i veebipoest</a
+            >. Laienduse kasutamine eeldab ribakoodlilugeja olemasolu.
+          </p>
+        </div>
+      </div>
+
+      <div class="split split--stack">
+        <div>
+          <h2>Lisateenused</h2>
+        </div>
+        <div class="stack">
+          <div class="spacer"></div>
+          <h3>Koolitus</h3>
+          <p>
+            Pakume koolitust, mis hõlmab masinloetavate märgiste kasutamist
+            muuseumi igapäevases töös.
+          </p>
+          <h3>Konsultatsioon</h3>
+          <p>
+            Vaatame läbi teie praegused tööprotsessid sh märgised ja
+            digimisvajadused ning leiame ühiselt lahenduse, kuidas <strong
+              >MuISi abiline</strong
+            > saab seda täiendada ja parandada.
+          </p>
+          <h3>Seadmete rent</h3>
+          <p>
+            Printeri soetamine ei ole <strong>MuISi abilise</strong> kasutamise eelduseks.
+            Rendime printeri ja vajalikud tarvikud teile sobilikuks ajaperjoodiks.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h3 id="notes">Täpsustused ja viited</h3>
+      <ul>
+        <li>
+          <strong>MuISi abiline</strong> toimib Chromiumi põhistes veebibrauserites
+          (näiteks Google Chrome).
+          <br />
+          <a
+            href="https://chrome.google.com/webstore/detail/muisi-abiline/kladebffgahpoofehamjiobhbofeeoem"
+            >Lae alla Chrome&#8217; veebipoest</a
+          >
+        </li>
+        <li>
+          <strong>MuISi abiline</strong> võimaldab otsida ainult avalikke museaale
+        </li>
+        <li>
+          Muinsuskaitseamet on läbi viinud analüüsi, milles käsitleti ka
+          museaalide märgistamist ning leiti ribakood olevat selleks parim viis
+        </li>
+        <li>
+          <a href="https://archaeovision.freshdesk.com/a/solutions"
+            ><strong>MuISi abilise</strong> juhendid</a
+          >
+        </li>
+        <li>
+          <strong>MuISi abiline</strong> saab olema ühtesobiv MuIS 2.0-ga
+        </li>
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

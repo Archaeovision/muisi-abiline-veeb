@@ -1,0 +1,28 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.scss";
+
+const {
+  title = "MuISi abiline - Märgistamislahendus Muuseumide Infosüsteemile",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="et">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="MuISi abiline kiirendab inventuuri ja võimaldab printida museaalidele märgised otse MuISi keskkonnast ilma muud tarkvara kasutamata."
+    />
+    <title>{title}</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <Header />
+    <slot />
+    <Footer />
+  </body>
+</html>

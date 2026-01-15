@@ -1,0 +1,35 @@
+---
+import { Image } from "astro:assets";
+import archaLogo from "../assets/Archaeovision_22x22mm1mm_kollanevalge.svg";
+---
+
+<footer class="site-footer">
+    <section class="section section--dark">
+        <div class="container contact-grid">
+            <div class="stack">
+                <h2 id="kontakt">Kontakt</h2>
+                <p>
+                    Teenust pakub <strong
+                        ><a href="https://archaeovision.eu">Archaeovision</a
+                        ></strong
+                    >
+                </p>
+                <p>Telefon: 5399 7996</p>
+                <p>
+                    Email: <a href="mailto:muis@archaeovision.eu"
+                        >muis@archaeovision.eu</a
+                    >
+                </p>
+            </div>
+            <div class="contact-logo">
+                <Image
+                    src={archaLogo}
+                    alt="Archaeovision"
+                    width={41*3}
+                    height={37*3}
+                    loading="lazy"
+                />
+            </div>
+        </div>
+    </section>
+</footer>
