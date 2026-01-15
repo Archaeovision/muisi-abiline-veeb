@@ -11,6 +11,23 @@ import logo from "../assets/logo.svg";
       <Image src={logo} alt="MuISi abiline" width={276} height={128} />
     </a>
     <div class="header-tagline">Märgistamislahendus Muuseumide Infosüsteemile</div>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+      <span class="nav-toggle-icon" aria-hidden="true"></span>
+      <span class="sr-only">Ava menüü</span>
+    </button>
     <Nav />
   </div>
 </header>
+
+<script is:inline>
+  const header = document.querySelector(".site-header");
+  const toggle = header?.querySelector(".nav-toggle");
+  const nav = header?.querySelector("#primary-nav");
+
+  if (toggle && nav) {
+    toggle.addEventListener("click", () => {
+      const isOpen = header.classList.toggle("nav-open");
+      toggle.setAttribute("aria-expanded", String(isOpen));
+    });
+  }
+</script>
