@@ -1,0 +1,15 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { formatDateEt } from "../utils/date";
+const { frontmatter } = Astro.props;
+const title = frontmatter?.title;
+const pubDate = frontmatter?.pubDate;
+---
+
+<BaseLayout title={title}>
+    <main class="container hero md-main">
+        {title && <h1 class="md-title">{title}</h1>}
+        {pubDate && <em>{formatDateEt(pubDate)}</em>}
+        <slot />
+    </main>
+</BaseLayout>

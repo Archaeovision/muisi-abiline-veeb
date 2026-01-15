@@ -1,0 +1,32 @@
+---
+layout: ../../layouts/Kirjutised.astro
+title: IIIF test
+author: Hembo
+description: IIIF test
+pubDate: 2026-01-15
+---
+import IIIIF from "../../components/IIIIF.astro";
+
+Siin ot katsetused eri manifestidega.
+
+<IIIIF
+  manifest="https://api.dc.library.northwestern.edu/api/v2/works/8a833741-74a8-40dc-bd1d-c416a3b1bb38?as=iiif"
+  viewer="img"
+/>
+
+<IIIIF
+  manifest="https://db.dl.tlu.ee/iiif/manifest/Pitserid/18074"
+  viewer="img"
+/>
+
+<IIIIF
+  manifest="https://cms.rahvaroivad.ee/wp-json/iiif/manifest/gallery/402?page=1"
+  viewer="img"
+/>
+
+Ning ka 3D vaaturiga.
+
+<IIIIF
+  manifest="https://av-media.lon1.cdn.digitaloceanspaces.com/manifests/tartu_old_observatory_mesh_model.json"
+  viewer="3d"
+/>

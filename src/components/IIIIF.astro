@@ -1,0 +1,30 @@
+---
+import CloverViewer from "@samvera/clover-iiif/viewer";
+import AlephIIIF from "./AlephIIIF";
+
+const {
+  manifest,
+  viewer = "viewer",
+  options,
+  id,
+  envPreset = "studio",
+  rotationPreset
+} = Astro.props;
+
+if (!manifest) {
+  throw new Error("IIIIF requires a 'manifest' prop.");
+}
+---
+
+<div class={`iiif iiif--${viewer}`} data-viewer={viewer}>
+  {viewer === "3d" ? (
+    <AlephIIIF
+      client:load
+      manifest={manifest}
+      envPreset={envPreset}
+      rotationPreset={rotationPreset}
+    />
+  ) : (
+    <CloverViewer client:only="react" iiifContent={manifest} options={options} id={id} />
+  )}
+</div>
