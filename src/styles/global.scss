@@ -60,6 +60,16 @@ ul {
 main {
   display: flex;
   flex-direction: column;
+
+  img {
+    margin: 2rem 0;
+    border: 1px solid #212529;
+    border-radius: 1rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
 }
 
 h1,
@@ -182,9 +192,10 @@ nav {
     padding: 12px 16px;
     height: 100%;
     text-decoration: none;
-
+    width: 100%;
     &:hover {
-      background-color: #ffffff;
+      background-color: #212529;
+      color: #fff;
     }
   }
 }
@@ -244,11 +255,19 @@ nav {
 
 figure {
   display: grid;
-  gap: 12px;
+  gap: 0;
+  background-color: #e6ff84; // annab värvi captionile
+  border-radius: 1rem;
+  img {
+    margin: 0;
+  }
+  
 }
 
 figcaption {
   font-size: 0.95rem;
+  text-align: center;
+  padding: 0.5rem;
 }
 
 .grid-two {

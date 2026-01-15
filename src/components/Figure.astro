@@ -1,0 +1,24 @@
+---
+import { Image } from "astro:assets";
+
+const {
+  src,
+  alt = "",
+  caption,
+  width,
+  height,
+  sizes,
+  loading = "lazy"
+} = Astro.props;
+
+const isString = typeof src === "string";
+---
+
+<figure class="figure">
+  {isString ? (
+    <img src={src} alt={alt} width={width} height={height} loading={loading} />
+  ) : (
+    <Image src={src} alt={alt} width={width} height={height} sizes={sizes} loading={loading} />
+  )}
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>
