@@ -1,0 +1,30 @@
+---
+layout: ../../layouts/Kirjutised.astro
+title: Versioon 1.5.5
+author: Hembo
+description: Versioon 1.5.5
+pubDate: 2026-01-21
+---
+import Figure from "../../components/Figure.astro";
+import demoImg from "../../assets/firefox_seadistamine.png";
+import sylemPrint from "../../assets/sylem_print.png";
+
+Täna sai välja uus versioon MuISi abilisest. Lisaks pisiparandustele ja teekide uuendusele sa lisatud järgmised olulised täiendused:
+- **Firefoxi tugi** - nüüd võimalik ka Firefoxi kasutajel alla laadida laiendus läbi [Firefox Browser Add-ons veebilehe](https://addons.mozilla.org/en-US/firefox/addon/muisi-abiline/). Printeri seadistamiseks klõpsa **MuISi abiline** laiendusel, ning see järel *Preferences*. 
+
+  <Figure
+    src={demoImg}
+    alt="Firefox laienduse seaded"
+    caption="Firefox laienduse seaded"
+    sizes="(max-width: 1000px) 100vw, 1000px"
+  />
+
+- **Nimekirjade printimine** sülemi vaates koos ribakoodi ja piltidega (valikuline). Eriti kasulik pisiesemete jaoks, kus igale esemele omaette silti printimine pole otstarbekas. 
+
+  <Figure
+    src={sylemPrint}
+    alt="Sülemi printimine"
+    caption="Sülemi printimine koos ribakoodidega"
+    sizes="(max-width: 1000px) 100vw, 1000px"
+  />
+

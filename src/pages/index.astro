@@ -8,6 +8,9 @@ import ex2 from "../assets/ex2__resize_790_2C346_ssl_1.png";
 import maMargend from "../assets/ma_margend__resize_1024_2C683_ssl_1.jpg";
 import maPrinterr from "../assets/ma_printerr__resize_1024_2C683_ssl_1.jpg";
 import maEx from "../assets/ma-ex__resize_396_2C389_ssl_1.png";
+
+const latestVersion = "1.5.5";
+const latestDate = "21.01.2025";
 ---
 
 <BaseLayout>
@@ -16,6 +19,7 @@ import maEx from "../assets/ma-ex__resize_396_2C389_ssl_1.png";
       <div class="container split split--hero">
         <div class="stack">
           <h1>Märgistamislahendus Muuseumide Infosüsteemile</h1>
+
           <p class="lead-xl">
             <strong>MuISi abiline</strong> võimaldab printida sildid otse MuISi keskkonnast
             sildiprinterisse ilma muud tarkvara kasutamata.
@@ -24,6 +28,15 @@ import maEx from "../assets/ma-ex__resize_396_2C389_ssl_1.png";
             Prindi üks või tuhat silti, aega kulub selleks paari hiirekliki
             jagu.
           </p>
+          <div class="version-card">
+            <span class="version-card__label">Uus versioon</span>
+            <span class="version-card__value">{latestVersion}</span>
+            <span class="version-card__meta"
+              >Lisatud Firefoxi tugi jm, <a href="/kirjutised/v1_5_5"
+                >loe lisa</a
+              ></span
+            >
+          </div>
         </div>
         <div class="hero-media">
           <Image src={printer} alt="" width={215} height={378} priority />
@@ -63,7 +76,7 @@ import maEx from "../assets/ma-ex__resize_396_2C389_ssl_1.png";
             caption="Rohelise noolega on tähistatud otsinguaken ribakoodilugejale"
             sizes="(max-width: 790px) 100vw, 790px"
           />
-          
+
           <h3>Märgise printimine</h3>
           <p>
             Sülemivaatesse lisab <strong>MuISi abiline</strong> nupud printimiseks
