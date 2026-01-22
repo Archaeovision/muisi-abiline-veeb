@@ -9,7 +9,12 @@ const pubDate = frontmatter?.pubDate;
 <BaseLayout title={title}>
     <main class="container hero md-main">
         {title && <h1 class="md-title">{title}</h1>}
-        {pubDate && <em>{formatDateEt(pubDate)}</em>}
+        <div class="post-meta-row">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a class="breadcrumb__pill" href="/kirjutised">Kirjutised</a>
+            </nav>
+            {pubDate && <p class="post-date">{formatDateEt(pubDate)}</p>}
+        </div>
         <slot />
     </main>
 </BaseLayout>

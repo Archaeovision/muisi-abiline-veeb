@@ -20,9 +20,22 @@ const {
     <title>{title}</title>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   </head>
-  <body>
+  <body id="top" class="page-shell">
     <Header />
     <slot />
     <Footer />
+    <a class="back-to-top" href="#top" aria-label="Tagasi lehe algusesse">↑</a>
+    <script>
+      (() => {
+        const root = document.documentElement;
+        const toggle = () => {
+          const shouldShow = window.scrollY > window.innerHeight;
+          root.classList.toggle("show-back-to-top", shouldShow);
+        };
+        toggle();
+        window.addEventListener("scroll", toggle, { passive: true });
+        window.addEventListener("resize", toggle);
+      })();
+    </script>
   </body>
 </html>

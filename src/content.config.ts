@@ -11,7 +11,7 @@ import { z } from 'astro/zod';
 
 // 4. Define your collection(s)
 const kirjutised = defineCollection({
-    loader: glob({ pattern: "**/*.md", base: "./src/pages/kirjutised" }),
+    loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/pages/kirjutised" }),
     schema: z.object({
         title: z.string(),
         description: z.string(),

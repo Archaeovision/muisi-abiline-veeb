@@ -1,0 +1,48 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import { formatDateEt } from "../../utils/date";
+
+const kirjutised = await getCollection("kirjutised");
+const sorted = [...kirjutised].sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+const toSlug = (id) => id.replace(/\.(md|mdx)$/i, "");
+---
+
+<BaseLayout title="Kirjutised">
+  <main>
+    <section class="section hero">
+      <div class="container">
+        <h1>Kirjutised</h1>
+        <p class="lead-xl">
+          Uudised, versiooniinfo ja lühikesed juhendid MuISi abilise kohta.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        {
+          sorted.length === 0 ? (
+            <p>Hetkel pole kirjutisi.</p>
+          ) : (
+            <div class="post-grid">
+              {sorted.map((entry) => (
+                <a class="post-card" href={`/kirjutised/${toSlug(entry.id)}`}>
+                  <div class="post-card__meta">
+                    <span class="post-card__date">
+                      {formatDateEt(entry.data.pubDate)}
+                    </span>
+                  </div>
+                  <h2 class="post-card__title">{entry.data.title}</h2>
+                  <p class="post-card__desc">{entry.data.description}</p>
+                </a>
+              ))}
+            </div>
+          )
+        }
+      </div>
+    </section>
+  </main>
+</BaseLayout>
