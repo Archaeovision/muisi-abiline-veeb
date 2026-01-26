@@ -8,17 +8,37 @@ const {
   width,
   height,
   sizes,
-  loading = "lazy"
+  loading = "lazy",
+  layout = "constrained",
+  class: className,
+  className: classNameProp,
 } = Astro.props;
 
 const isString = typeof src === "string";
+const figureClass = ["figure", className, classNameProp].filter(Boolean).join(" ");
 ---
 
-<figure class="figure">
-  {isString ? (
-    <img src={src} alt={alt} width={width} height={height} loading={loading} />
-  ) : (
-    <Image src={src} alt={alt} width={width} height={height} sizes={sizes} loading={loading} />
-  )}
+<figure class={figureClass}>
+  {
+    isString ? (
+      <img
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        loading={loading}
+      />
+    ) : (
+      <Image
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        sizes={sizes}
+        loading={loading}
+        layout={layout}
+      />
+    )
+  }
   {caption && <figcaption>{caption}</figcaption>}
 </figure>

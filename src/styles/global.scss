@@ -95,6 +95,23 @@ h4 {
   font-size: 1.15rem;
 }
 
+blockquote {
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  border: var(--ui-border);
+  border-left-width: 6px;
+  background: #f4ffba;
+  font-weight: 500;
+}
+
+blockquote p {
+  margin: 0;
+}
+
+blockquote p + p {
+  margin-top: 0.75rem;
+}
+
 .container-fluid {
   display: flex;
   flex-wrap: inherit;
@@ -424,6 +441,17 @@ figure {
 
 }
 
+.figure--compact {
+  width: 300px;
+  max-width: 300px;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
 figcaption {
   font-size: 0.95rem;
   text-align: center;
@@ -439,6 +467,10 @@ figcaption {
 
 .media-grid {
   margin-top: 28px;
+}
+
+.media-grid--compact {
+  justify-items: center;
 }
 
 .heading-border {
@@ -595,6 +627,15 @@ figcaption {
 }
 
 @media (max-width: $bp-lg) {
+  .media-grid--compact {
+    grid-template-columns: 1fr;
+  }
+
+  .figure--compact {
+    width: 100%;
+    max-width: none;
+  }
+
   h1 {
     font-size: 25px;
   }

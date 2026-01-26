@@ -9,6 +9,8 @@ cover: firefox_seadistamine.png
 import Figure from "../../components/Figure.astro";
 import demoImg from "../../assets/firefox_seadistamine.png";
 import sylemPrint from "../../assets/sylem_print.png";
+import permissionErrorEt from "../../assets/permission_error_et.png";
+import permissionErrorEn from "../../assets/permission_error_en.png";
 
 Täna sai välja uus versioon **MuISi abilisest**. Lisaks pisiparandustele ja teekide uuendusele sai lisatud järgmised olulised täiendused:
 - **Firefoxi tugi** - nüüd võimalik ka Firefoxi kasutajel alla laadida laiendus läbi Firefox Browser Add-ons veebilehe. Printeri seadistamiseks klõpsa **MuISi abiline** laiendusel, ning see järel *Preferences*. 
@@ -29,3 +31,23 @@ Täna sai välja uus versioon **MuISi abilisest**. Lisaks pisiparandustele ja te
     sizes="(max-width: 1000px) 100vw, 1000px"
   />
 
+> **OLULINE** - Muutus printeriga kommunikatsiooni loogika (enam ei ole vaja Chrome'i brauseris lubada *ebaturvalist* sisu), sellelga seoses on vajalik printeri seaded uuesti salvestada. Selleks ava brauseris **MuISi abiline** laienduse *Valikud* (Options), kontrolli printeri seaded ning vajuta **Salvesta** nupule. Ilmub teade "MuISi abiline on taodelnud täiendavaid lube". Kõpsates **Luba** nupule, on kõik vajalikud õigused antud.
+
+<div class="grid-two media-grid media-grid--compact">
+  <Figure
+      src={permissionErrorEt}
+      alt="Õiguste määramine (eesti keeles)"
+      caption="Printeri õiguste määramine"
+      class="figure--compact"
+      sizes="(max-width: 1000px) 100vw, 300px"
+  />
+
+  <Figure
+      src={permissionErrorEn}
+      alt="Õiguste määramine (inglise keeles)"
+      caption="Printeri õiguste määramine"
+      class="figure--compact"
+      sizes="(max-width: 1000px) 100vw, 300px"
+
+  />
+</div>
