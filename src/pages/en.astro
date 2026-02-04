@@ -1,0 +1,212 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import printer from "../assets/printer.svg";
+---
+
+<BaseLayout
+    title="MuISi Abiline - Label Printing for Collection Management Systems"
+>
+    <main>
+        <section class="section section--yellow hero">
+            <div class="container split split--hero">
+                <div class="stack">
+                    <h1>
+                        Browser-based label printing for collection management
+                        systems
+                    </h1>
+
+                    <p class="lead-xl">
+                        <strong>MuISi Abiline</strong> is a browser extension that
+                        enables direct label printing from Estonia's museum collection
+                        management system (MuIS) without requiring additional software.
+                    </p>
+                    <p class="lead-xl">
+                        Print one or a thousand labels with just a few clicks.
+                    </p>
+                </div>
+                <div class="hero-media">
+                    <Image
+                        src={printer}
+                        alt=""
+                        width={215}
+                        height={378}
+                        priority
+                    />
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="stack">
+                    <h2>A universal approach</h2>
+
+                    <p>
+                        While MuISi Abiline was built specifically for the
+                        Estonian museum information system,
+                        <strong
+                            >the same browser extension approach can be applied
+                            to any collection management system</strong
+                        >.
+                    </p>
+
+                    <h3>Two implementation paths</h3>
+
+                    <div class="implementation-cards">
+                        <div class="impl-card">
+                            <h4>MuISi Abiline 2 (API-based)</h4>
+                            <p>
+                                <strong>Ideal approach:</strong> The collection management
+                                system provides an API endpoint that returns structured
+                                data about objects. The browser extension fetches
+                                this data and formats it for label printing.
+                            </p>
+                            <ul>
+                                <li>Clean separation of concerns</li>
+                                <li>Reliable data extraction</li>
+                                <li>Easy to maintain and update</li>
+                                <li>
+                                    Works with any label printer with ZPL
+                                    support
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="impl-card">
+                            <h4>MuISi Abiline 1 (DOM-based)</h4>
+                            <p>
+                                <strong>Alternative approach:</strong> When no API
+                                is available, the browser extension can extract data
+                                directly from the webpage's HTML structure (DOM manipulation).
+                            </p>
+                            <ul>
+                                <li>Works without system modifications</li>
+                                <li>No backend changes required</li>
+                                <li>May need updates when UI changes</li>
+                                <li>Suitable for legacy systems</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>Why barcodes?</h3>
+
+                    <ul>
+                        <li>
+                            <strong>Faster object lookup and inventory</strong> -
+                            Scan and find objects instantly instead of manual searching
+                        </li>
+                        <li>
+                            <strong
+                                >Accelerate and error-proof digitization
+                                workflows</strong
+                            > - Reduce human error in data entry and speed up cataloging
+                            processes
+                        </li>
+                        <li>
+                            <strong>Public-facing applications</strong> - Enable visitors
+                            to scan barcodes/QR codes for additional information about
+                            museum objects
+                        </li>
+                    </ul>
+
+                    <h3>Key features</h3>
+
+                    <ul>
+                        <li>
+                            <strong>Barcode scanning integration</strong> - Quick
+                            object lookup using collection IDs
+                        </li>
+                        <li>
+                            <strong>Direct label printing</strong> - Print to thermal
+                            label printers without intermediate software
+                        </li>
+                        <li>
+                            <strong>Batch operations</strong> - Print labels for multiple
+                            objects at once
+                        </li>
+                        <li>
+                            <strong>Inventory acceleration</strong> - 20% faster object
+                            verification in practice
+                        </li>
+                    </ul>
+
+                    <div class="cta-section">
+                        <h2>Interested in similar solution?</h2>
+                        <p>
+                            Whether your collection management system has an API
+                            or not, a browser extension-based label printing
+                            solution can streamline your museum's workflow.
+                        </p>
+                        <a href="mailto:hembo@ajapaik.ee" class="btn-cta"
+                            >Get in touch</a
+                        >
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</BaseLayout>
+
+<style>
+    .implementation-cards {
+        display: grid;
+        gap: 2rem;
+        margin: 2rem 0;
+    }
+
+    @media (min-width: 900px) {
+        .implementation-cards {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    .impl-card {
+        border: var(--ui-border);
+        padding: 1.5rem;
+        background: var(--white);
+    }
+
+    .impl-card h4 {
+        margin-top: 0;
+        color: var(--dark);
+    }
+
+    .impl-card ul {
+        margin-top: 1rem;
+    }
+
+    .impl-card li {
+        margin-bottom: 0.5rem;
+    }
+
+    .cta-section {
+        margin-top: 4rem;
+        padding: 3rem;
+        background: var(--yellow);
+        border: var(--ui-border);
+        text-align: center;
+    }
+
+    .cta-section h2 {
+        margin-top: 0;
+    }
+
+    .btn-cta {
+        display: inline-block;
+        padding: 1rem 2rem;
+        margin-top: 1.5rem;
+        background: var(--dark);
+        color: var(--white);
+        text-decoration: none;
+        border: var(--ui-border);
+        font-weight: 700;
+        font-size: 1.1rem;
+        transition: transform 0.2s;
+    }
+
+    .btn-cta:hover {
+        transform: translateY(-2px);
+        text-decoration: none;
+    }
+</style>
