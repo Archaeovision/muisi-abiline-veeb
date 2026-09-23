@@ -3,13 +3,16 @@ layout: ../layouts/MdPage.astro
 title: Privaatsuspoliitika
 ---
 
-*Kehtib alates: [KUUPÄEV — täida enne avaldamist]*
+*Kehtib alates: 23.09.2026*
+
+*[Read this page in English](/privacy)*
 
 ## 1. Kes me oleme
 
 MuISi abiline Chrome'i laienduse ("Laiendus") arendaja ja vastutav töötleja on
-**Archaeovision**, aadressil Kaarli pst 5, Tallinn ("meie"). Küsimuste korral
-võta ühendust: [support@archaeovision.eu](mailto:support@archaeovision.eu).
+**Archaeovision** (registrikood 12705772), aadressil Kaarli pst 5, Tallinn
+("meie"). Küsimuste korral võta ühendust:
+[support@archaeovision.eu](mailto:support@archaeovision.eu).
 
 ## 2. Milliseid andmeid kogume
 
